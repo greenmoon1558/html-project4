@@ -1,0 +1,6 @@
+@mixin tree-columns() {
+  .tree-columns {
+    column-count: 3;
+    column-gap: 3rem;
+  }
+}

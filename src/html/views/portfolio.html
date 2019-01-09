@@ -1,0 +1,29 @@
+<% var data = { title: "Portfolio", author: "Natalia Zhydejkina" }; %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="style.bundle.css" />
+    <title>
+        <%=data.title%>
+    </title>
+</head>
+<!-- <div class="test__img"></div> -->
+<body>
+    <%= _.template(require('./../includes/header.html'))() %>
+    <div class="c-portfolio">
+        <%= _.template(require('./../includes/heading.html'))({
+            img: "img/headling__img2.jpg",
+            title: "LATEST PROJECTS",
+            subtitle: "We Deliver Quality",
+            alt: "cosmetic",
+            heading: "<section class='c-heading darker'>"
+        }) %>
+        <%= _.template(require('./../includes/images-gallery.html'))() %>
+    </div>
+    <%= _.template(require('./../includes/footer.html'))() %>
+</body>
+
+</html>

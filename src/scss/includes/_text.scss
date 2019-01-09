@@ -1,0 +1,12 @@
+.title--center {
+  font-size: 3rem;
+  letter-spacing: 1.2rem;
+  text-align: center;
+  margin: 38.5px 0 0 1%;
+  @include scale();
+}
+.text--center {
+  text-align: center;
+  margin: 27.5px auto 60px;
+  max-width: 60rem;
+}

@@ -1,0 +1,28 @@
+<% var data = { title: "Blog", author: "Natalia Zhydejkina" }; %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="style.bundle.css" />
+    <title>
+        <%=data.title%>
+    </title>
+</head>
+<!-- <div class="test__img"></div> -->
+
+<body>
+    <%= _.template(require('./../includes/header.html'))() %>
+    <%= _.template(require('./../includes/heading.html'))({
+        img: "img/headling__img3.jpg",
+        title: "News About Lian",
+        subtitle: "Latest News & Insights",
+        alt: "girl",
+        heading: "<section class='c-heading'>"
+    }) %>
+    <%= _.template(require('./../includes/blog/posts.html'))() %>
+    <%= _.template(require('./../includes/footer.html'))() %>
+</body>
+
+</html>

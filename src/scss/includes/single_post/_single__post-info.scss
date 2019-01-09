@@ -1,0 +1,82 @@
+.c-single__post {
+  background-color: $galleryWhite;
+}
+.info {
+  padding: 60px 0 0 0;
+  .text__title {
+    color: $postBlack;
+    font-family: $fontRoboto;
+    font-size: 1.6rem;
+    font-weight: 700;
+    max-width: 81rem;
+    margin: 38px auto -7px;
+    display: block;
+    letter-spacing: 0.004rem;
+    text-transform: uppercase;
+  }
+  &__ {
+    &titles {
+      &--small {
+        margin: 0;
+        text-align: center;
+        color: $headerGray;
+      }
+    }
+    &title {
+      &--main {
+        margin: 0;
+        text-align: center;
+        color: $postBlack;
+        font-size: 3rem;
+        letter-spacing: 0.45rem;
+      }
+      &--bold {
+        margin: 13px 3rem 25px;
+        display: inline-block;
+        font-size: 1.4rem;
+        .like__icon--gray {
+          display: inline-block;
+          background-repeat: no-repeat;
+          background-position: left 2px;
+          background-size: 1.4rem 1.7rem;
+          width: 1.7rem;
+          background-image: url(img/heart-gray.svg);
+          height: 1.7rem;
+        }
+      }
+    }
+    &author {
+    }
+    &date {
+    }
+    &likes {
+    }
+    &img {
+      border-style: none;
+      display: block;
+      margin: 0 auto 4rem;
+      width: auto;
+    }
+    &text {
+      max-width: 81rem;
+      margin: 1rem auto 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.04rem;
+      line-height: 3.1rem;
+    }
+    &comments {
+      border: 0.1rem solid $galleryFilterLine;
+      border-left: 0.4rem solid $singlePOstCommentGray;
+      max-width: 94rem;
+      color: $headerGray;
+      font-family: $fontPTSerif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-style: italic;
+      padding: 1.5rem 2rem 2.5rem 3.5rem;
+      margin: 22px auto;
+      line-height: 3rem;
+      letter-spacing: -0.04rem;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@mixin container-big() {
+  .container {
+    &-- {
+      &big {
+        display: grid;
+        grid-template-areas: ". container .";
+        grid-template-columns: 1fr minmax(auto, 114.5rem) 1fr;
+      }
+      &inner {
+        grid-area: container;
+      }
+    }
+  }
+}

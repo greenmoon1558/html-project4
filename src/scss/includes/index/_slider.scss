@@ -1,0 +1,105 @@
+.c-slider {
+  position: relative;
+  .slider {
+    &__ {
+      &wrapper {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: transform 0.5s;
+        will-change: transform;
+      }
+      &button {
+        width: 4.1rem;
+        height: 4.1rem;
+        border-radius: 50%;
+        border: 1px solid $white;
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        &--active,
+        &:focus,
+        &:hover,
+        &:active {
+          border: 1px solid $black;
+          background-color: $black;
+        }
+        &-- {
+          &left {
+            left: 7%;
+            &:before {
+              content: "";
+              position: absolute;
+              border-left: 2px solid $white;
+              border-top: 2px solid $white;
+              border-bottom: 0px solid transparent;
+              border-right: 0px solid transparent;
+              width: 1.4rem;
+              height: 1.4rem;
+              z-index: 5;
+              transform: rotate(-45deg) translate(10%, -60%);
+            }
+          }
+          &right {
+            right: 7%;
+            &:before {
+              content: "";
+              position: absolute;
+              border-left: 2px solid $white;
+              border-top: 2px solid $white;
+              border-bottom: 0px solid transparent;
+              border-right: 0px solid transparent;
+              width: 1.4rem;
+              height: 1.4rem;
+              z-index: 5;
+              transform: rotate(135deg) translate(20%, 75%);
+            }
+          }
+        }
+      }
+      &peas {
+        position: absolute;
+        bottom: 5.9rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      &pea {
+        width: 1.4rem;
+        height: 1.4rem;
+        border: 0.4rem solid $white;
+        display: block;
+        padding: 0;
+        margin: 0 10px;
+        background-color: $white;
+        border-radius: 50%;
+        &--active {
+          border: 0.4rem solid $black;
+        }
+      }
+    }
+  }
+  .slide {
+    flex: 0 0 100%;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    &__ {
+      &title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -117%);
+      }
+      &subtitle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 115%);
+      }
+    }
+  }
+}

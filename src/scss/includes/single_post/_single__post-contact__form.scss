@@ -1,0 +1,63 @@
+.c-contact__form {
+  grid-template-columns: 1fr minmax(auto, 81rem) 1fr;
+}
+.contact {
+  &__ {
+    &tree-colunms {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 3rem;
+    }
+    &input {
+      color: $headerGray;
+      font-family: $fontRoboto;
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 2.4rem;
+      border: 0.1rem solid $galleryFilterLine;
+      padding: 8px 1.2rem 5px;
+      &::placeholder {
+        color: $contactLightGray;
+      }
+      &:first-child{
+          border-left: 0.4rem solid rgba($galleryGray, 0.3);
+      }
+    }
+    &textarea {
+      color: $headerGray;
+      font-family: $fontRoboto;
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 2.4rem;
+      width: 100%;
+      margin: 21px auto;
+      height: 113px;
+      border: 0.1rem solid $galleryFilterLine;
+      &::placeholder {
+        color: $contactLightGray;
+        text-transform: capitalize;
+      }
+      padding: 8px 1.2rem 5px;
+    }
+    &title {
+      text-align: center;
+      margin: 5px 0 45px;
+      font-size: 2rem;
+      letter-spacing: 0.4rem;
+    }
+    &btn {
+      color: $white;
+      font-family: $fontRoboto;
+      display: block;
+      margin: 0.1rem auto 82px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 2.133rem;
+      padding: 11px 4.1rem;
+      text-transform: uppercase;
+      background-color: $black;
+      border: none;
+      letter-spacing: 0.079rem;
+    }
+  }
+}

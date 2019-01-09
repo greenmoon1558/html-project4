@@ -1,0 +1,37 @@
+.c-heading {
+  background: $headingBackgroundGray;
+  position: relative;
+  text-align: right;
+  &.darker {
+    background: $headingBackgroundGrayDarker;
+    .heading__ {
+      &title {
+        padding: 0 2.25rem 0px 3.5rem;
+      }
+    }
+  }
+  .container--inner {
+    text-align: left;
+  }
+  .heading {
+    &__ {
+      &img {
+        @include translateFromRight();
+      }
+      &title-wrapper {
+        position: absolute;
+        top: 32%;
+        left: 0;
+        width: 100vw;
+      }
+      &title {
+        display: inline-block;
+        padding: 0 3.2rem;
+      }
+      &subtitle {
+        position: absolute;
+        padding: 40.5px 0 0 0;
+      }
+    }
+  }
+}

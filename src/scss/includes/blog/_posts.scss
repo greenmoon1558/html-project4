@@ -1,0 +1,298 @@
+.c-posts {
+  background-color: $galleryWhite;
+  .container--inner {
+    margin: 68px 0 0 0;
+  }
+}
+.posts {
+  &__ {
+    &load-more{
+      margin: 3.5rem auto 10rem;
+    }
+    &three-columns {
+        display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+    }
+    &list {
+      padding: 1.5rem 2.2rem 0.5rem 2.2rem;
+      list-style-type: none;
+      margin: 0;
+    }
+  }
+}
+
+.post {
+  margin-bottom: 32px;
+  background-color: $white;
+  &--black {
+    background-color: transparent;
+    position: relative;
+    color: $white;
+    .post__ {
+      &header {
+        color: $white;
+      }
+    }
+    z-index: 3;
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      position: absolute;
+      background: $black center no-repeat;
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.85),
+          rgba(0, 0, 0, 0.85)
+        ),
+        url(img/post-background-black.jpg);
+    }
+  }
+  &--1,
+  &--3 {
+    padding: 3.8rem 3.4rem 3.8rem 4.7rem;
+  }
+  &--7 {
+    margin-bottom: 28px;
+  }
+  &--8 {
+    margin-bottom: 25px;
+  }
+  &--9{
+    margin-bottom: 40px;
+  }
+  &--10{
+    .post__header--gray{
+      margin: 0 0 35px 0;
+    }
+  }
+  &-author__wrapper {
+    padding: 0.8rem 0 0 0;
+  }
+  &__ {
+    &instagram{
+      padding: 0 2.5rem 2.5rem 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 0.5rem;
+    }
+    &tags {
+      padding: 2.5rem 0.5rem 1.7rem 1.9rem;
+      margin: 0;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    &tag-item {
+      display: inline-block;
+      color: $footerGray;
+      font-family: $fontRoboto;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin: 0 0.6rem 13px 0;
+      padding: 0.6rem 4.5%;
+      background-color: $white;
+      border-radius: 0.2rem;
+      border: 0.1rem solid $tagBorderGray;
+      &:hover,
+      &:focus{
+        background-color: $black;
+        color: $white;
+      }
+    }
+    &item {
+      display: flex;
+      padding: 0 0 2.25rem 0;
+    }
+    &titles--min {
+      padding-left: 5%;
+    }
+    &title--min {
+      margin: 0;
+      color: $postsTitleGray;
+      font-family: $fontRoboto;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.01rem;
+      line-height: 2rem;
+    }
+    &date--min {
+      padding: 1.3rem 0 0 0;
+      display: inline-block;
+      color: $headerGray;
+      font-family: $fontRoboto;
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+    &img--min {
+      max-height: 65px;
+    }
+    &text-wrapper {
+      padding: 0 3.4rem 3.8rem 4.4rem;
+      margin-top: -0.2rem;
+      .post__ {
+        &header {
+          line-height: 3rem;
+          letter-spacing: -0.008rem;
+          margin: 2rem 0 0.2rem;
+        }
+        &text {
+          margin: 29px 0 36px 0;
+          letter-spacing: -0.009rem;
+        }
+      }
+    }
+    &img {
+      width: 100%;
+      height: auto;
+    }
+    &footer {
+      display: flex;
+      justify-content: space-between;
+      .social__icons {
+        margin-right: 0.5rem;
+      }
+    }
+    &btn {
+      background-color: $black;
+      border: none;
+      color: $white;
+      font-family: $fontRoboto;
+      font-size: 1.3rem;
+      line-height: 0.9rem;
+      font-weight: 700;
+      padding: 0.9rem 1.7rem;
+      text-transform: uppercase;
+    }
+
+    &header {
+      &--gray {
+        background-color: $footerWhite;
+        color: $black;
+        font-family: $fontRoboto;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 2.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.72rem;
+        text-align: center;
+        padding: 1rem 0 0.6rem;
+        position: relative;
+        margin: 0 0 1rem 0;
+        &:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          bottom: -0.8rem;
+          left: calc(50% - 1.5rem);
+          border-left: 1rem solid transparent;
+          border-right: 1rem solid transparent;
+          border-top: 1rem solid $footerWhite;
+        }
+      }
+      color: $postBlack;
+      font-family: $fontRoboto;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 25px 0 28px;
+    }
+    &icon {
+      display: inline-block;
+      .icon {
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 1.2rem 1.1rem;
+        width: 1.3rem;
+        height: 1.2rem;
+        &.author__icon {
+          background-image: url(img/posts.svg#user);
+        }
+        &.share__icon {
+          background-image: url(img/posts.svg#share);
+          background-size: 1.2rem 1.5rem;
+          width: 1.3rem;
+          height: 1.6rem;
+        }
+        &.like__icon {
+          background-image: url(img/posts.svg#like);
+          background-position: right;
+          background-size: 1.5rem 1.5rem;
+          width: 3.5rem;
+          height: 1.6rem;
+        }
+        &.calendar__icon {
+          background-image: url(img/posts.svg#calendar);
+          background-size: 1.3rem 1.3rem;
+          width: 1.4rem;
+          height: 1.3rem;
+        }
+        &.search__icon {
+          background-image: url(img/posts.svg#search);
+          background-position: center;
+          background-size: 1.5rem 1.5rem;
+          width: 3.5rem;
+          height: 3.4rem;
+        }
+      }
+    }
+    &author {
+      color: $detailsGray;
+      font-family: $fontRoboto;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    &text {
+      font-family: $fontRoboto;
+      font-size: 1.4rem;
+      color: $headerGray;
+      line-height: 2.4rem;
+      margin: 0 0 40px 0;
+    }
+    &date {
+      font-family: $fontRoboto;
+      font-size: 1.3rem;
+      color: $postGray;
+    }
+    &search {
+      padding: 1.2rem 1.5rem 1.3rem 2.2rem;
+      width: 100%;
+      .post__icon {
+        background-color: $detailLightGray;
+        width: 3.6rem;
+        height: 34px;
+        border-radius: 0.2rem;
+      }
+      .search {
+        &__ {
+          &form {
+            width: 100%;
+            background-color: $white;
+            height: 60px;
+          }
+          &input {
+            display: inline-block;
+            border: none;
+            width: 100%;
+            font-family: $fontRoboto;
+            font-size: 1.6rem;
+            font-style: italic;
+            line-height: 2rem;
+            color: $headerGray;
+            &::placeholder {
+              color: $searchGray;
+            }
+          }
+        }
+      }
+    }
+  }
+}

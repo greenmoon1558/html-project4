@@ -1,0 +1,20 @@
+<% var data = { title: "Home", author: "Natalia Zhydejkina" }; %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="style.bundle.css" />
+    <title><%=data.title%></title>
+  </head>
+  <!-- <div class="test__img"></div> -->
+  <body>
+    <%= _.template(require('./../includes/header.html'))() %>
+    <%= _.template(require('./../includes/index/slider.html'))() %>
+    <%= _.template(require('./../includes/images-gallery.html'))() %>
+    <%= _.template(require('./../includes/footer.html'))() %>
+  </body>
+</html>

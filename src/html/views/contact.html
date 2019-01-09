@@ -1,0 +1,36 @@
+<% var data = { title: "Contact", author: "Natalia Zhydejkina" }; %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="style.bundle.css" />
+    <title>
+        <%=data.title%>
+    </title>
+</head>
+<div class="test__img"></div>
+
+<body>
+    <%= _.template(require('./../includes/header.html'))() %>
+    <%= _.template(require('./../includes/heading.html'))({
+        img: "img/headling__img.png",
+        title: "Get in Touch",
+        subtitle: "Contact us Today",
+        alt: "work deck with notebook",
+        heading: "<section class='c-heading'>"
+    }) %>
+    <div class="c-contact-page">
+        <%= _.template(require('./../includes/contact/contact__form.html'))() %>
+        <%= _.template(require('./../includes/contact/map.html'))() %>
+        <%= _.template(require('./../includes/text.html'))({
+                title: "Our Values",
+                text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit."
+              }) %>
+        <%= _.template(require('./../includes/contact/three-sections.html'))() %>
+    </div>
+    <%= _.template(require('./../includes/footer.html'))() %>
+</body>
+
+</html>

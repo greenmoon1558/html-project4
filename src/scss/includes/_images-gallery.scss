@@ -1,0 +1,65 @@
+.images-gallery {
+  background-color: $galleryWhite;
+  .gallery {
+    &__ {
+      &filter {
+        @include scale();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.1rem solid $galleryFilterLine;
+        border-left: 0px;
+        border-right: 0px;
+        margin: 30px 0;
+        padding: 0;
+        .filter__item {
+          color: $headerGray;
+          font-family: $fontRoboto;
+          font-size: 1.4rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.105rem;
+          position: relative;
+          padding: 23px 2.7rem 21px 1.8rem;
+          &--active {
+            color: $black;
+          }
+          &:not(:last-child)::after {
+            content: "";
+            height: 3rem;
+            background-color: $galleryFilterDivider;
+            width: 0.1rem;
+            transform: rotate(20deg);
+            position: absolute;
+            right: 0px;
+            top: 15px;
+          }
+        }
+      }
+      &images {
+        margin-right: 0.5rem;
+        .js-hide {
+          display: none;
+        }
+      }
+      &row {
+        text-align: center;
+      }
+      &img {
+        animation: hideImg 1s linear alternate-reverse forwards;
+        padding: 0 0 3rem 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@keyframes hideImg {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

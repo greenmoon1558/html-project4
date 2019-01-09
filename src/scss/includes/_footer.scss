@@ -1,0 +1,71 @@
+.c-footer {
+  box-shadow: 0 -0.3rem 0.5rem 0.1rem $footerBlack;
+  background-color: $white;
+  .footer {
+    &__ {
+      &wrapper {
+        &-- {
+          &big {
+            padding: 6.8rem 0px 4.25rem;
+            text-align: center;
+          }
+          &small {
+            height: 63px;
+            border: 0.1rem solid $footerWhite;
+          }
+          &middle {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+.copyright {
+  color: $footerGray;
+  font-family: $fontRoboto;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.025rem;
+  margin: 33px auto 42.5px;
+  &--strong {
+    color: $black;
+  }
+}
+.social {
+  &-media {
+   @include scale();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include icon("facebook");
+    @include icon("google-plus");
+    @include icon("twitter");
+    @include icon("linkedin");
+    @include icon("dribble");
+    @include icon("pinterest");
+    @include icon("instagram");
+  }
+  &__link {
+    padding: 24px 26px;
+    text-decoration: none;
+    &:focus,
+    &:hover,
+    &:visited {
+      @include icon-active("facebook");
+      @include icon-active("google-plus");
+      @include icon-active("twitter");
+      @include icon-active("linkedin");
+      @include icon-active("dribble");
+      @include icon-active("pinterest");
+      @include icon-active("instagram");
+    }
+  }
+  &__icon {
+    width: 15px;
+    background-size: 15px;
+    height: 15px;
+    display: inline-block;
+  }
+}

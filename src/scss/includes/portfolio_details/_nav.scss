@@ -1,0 +1,82 @@
+.c-nav {
+  background-color: $white;
+  grid-template-columns: 1fr minmax(auto, 114rem) 1fr;
+  .container {
+    &-- {
+      &inner {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+      }
+    }
+  }
+  &__ {
+    &btns {
+      display: flex;
+    }
+    &btn {
+      padding: 0;
+      width: 16.5rem;
+      border: none;
+      border-right: 0.1rem solid $footerWhite;
+      background-color: $white;
+      color: $navBlack;
+      font-family: $fontRoboto;
+      font-weight: 700;
+      letter-spacing: 0.097rem;
+      font-size: 1.3rem;
+      align-items: baseline;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      text-transform: uppercase;
+      margin: 0;
+      &.btn {
+        &-- {
+          &prev {
+            border-left: 0.1rem solid $footerWhite;
+          }
+          &next {
+            .icon {
+              background-position-x: 0.7rem;
+            }
+          }
+          &all {
+            border-left: 0.1rem solid $footerWhite;
+            width: 19.4rem;
+          }
+        }
+      }
+      .show-all__icon.icon {
+        background-size: 2.1rem 1.5rem;
+        width: 3rem;
+        background-image: url(img/nav.svg#list-ul);
+      }
+      .next__icon {
+        background-image: url(img/nav.svg#arrow-right);
+      }
+      .prev__icon {
+        background-image: url(img/nav.svg#arrow-left);
+      }
+    }
+    &icon {
+      height: 100%;
+      width: auto;
+      .icon {
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: left;
+        background-position-x: -5px;
+        background-position-y: 3px;
+        background-size: 1.5rem;
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+    }
+    &list {
+      margin: 0;
+      padding: 0;
+      display: none;
+    }
+  }
+}

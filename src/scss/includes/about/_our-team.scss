@@ -1,0 +1,37 @@
+.c-team {
+  background-color: $galleryWhite;
+  .team {
+    &-members {
+      margin-bottom: 7.25rem;
+      &__ {
+        &card {
+            @include rotateY();
+        }
+        &img-container {
+        }
+        &img {
+        }
+        &info {
+          background-color: $white;
+          padding: 30px 3.3rem 22px 3.3rem;
+        }
+      }
+    }
+  }
+  .info {
+    &__ {
+      &title {
+        margin: 0;
+
+        &--bold {
+          margin: 4px 0 12px;
+        }
+      }
+      &text {
+        margin: 0;
+        line-height: 2.5rem;
+        letter-spacing: 0px;
+      }
+    }
+  }
+}

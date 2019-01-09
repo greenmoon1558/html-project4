@@ -1,0 +1,20 @@
+.c-portfolio {
+  .images-gallery {
+    .gallery {
+      &__ {
+        &btn {
+          margin: -10rem auto 15.3rem;
+        }
+        &img {
+          padding: 0 0 3.2rem 0px;
+        }
+        &filter {
+          margin: 67px 0 28px;
+          .filter__item {
+            padding: 23px 2.7rem 20px 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}

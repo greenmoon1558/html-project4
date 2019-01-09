@@ -1,0 +1,73 @@
+.header {
+  .container--big {
+    grid-template-rows: 9.2rem;
+  }
+  .container--inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.c-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .menu {
+    &__line {
+      width: 2rem;
+      height: 0.1rem;
+      background-color: $black;
+      @include scaleToLeft();
+    }
+    &-items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__link:first-child {
+      padding: 3.4rem 2.1rem 2.9rem 1.7rem;
+    }
+    &__link {
+      text-decoration: none;
+      color: $headerGray;
+      font-family: $fontRoboto;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3.4rem 2.3rem 2.9rem 2.2rem;
+      &:focus,
+      &:hover,
+      &:active,
+      &:visited {
+        color: $black;
+      }
+    }
+  }
+}
+.search {
+  &__ {
+    &form {
+      display: inline-flex;
+      padding: 4.1rem 1.4rem 3.4rem 2.2rem;
+    }
+    &input {
+      display: none;
+    }
+    &icon {
+      &-container {
+        height: 100%;
+        width: auto;
+      }
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-position-x: 1px;
+      background-image: url("img/search-icon.svg");
+      width: 1.75rem;
+      height: 1.5rem;
+    }
+  }
+}
+.c-logo {
+  @include translateFromTop();
+}

@@ -1,0 +1,94 @@
+.c-history {
+  min-width: 600px;
+  padding: 69px 0 0;
+  background-color: $galleryWhite;
+  .history {
+    &__ {
+      &block {
+        max-width: 55.5rem;
+      }
+      &title {
+        padding: 0.5rem 0;
+        margin: 0;
+      }
+      &text {
+        margin: 25px 0px 27.5px 0px;
+      }
+      &img{
+        @include rotateY();
+      }
+      &progress-bars {
+        margin: 31px 0 0 0;
+      }
+      &wrapper {
+        column-gap: 2.5rem;
+        column-count: 2;
+        padding-bottom: 38px;
+        border-bottom: 1px solid $footerWhite;
+      }
+    }
+  }
+}
+.c-progress-bar {
+  margin: 0 0 21px;
+  .progress-bar {
+    background-color: $footerWhite;
+    height: 10px;
+    width: 100%;
+    position: relative;
+    &__ {
+      &runner {
+        height: 2px;
+        position: relative;
+        top: -4px;
+        left: 0.4rem;
+        display: inline-block;
+        background-color: $progressBarRunnerBlack;
+        @include scaleToRight();
+        &:before {
+          content: "";
+          display: block;
+          width: 0.8rem;
+          height: 0.8rem;
+          background: $white;
+          position: absolute;
+          right: 0;
+          top: -150%;
+          border-radius: 50%;
+          box-sizing: border-box;
+          border: 0.2rem solid $black;
+        }
+      }
+
+      &flag {
+        @include visible();
+        width: 4rem;
+        height: 20px;
+        display: inline-block;
+        background: $black;
+        position: absolute;
+        top: -38px;
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 20px;
+          border-left: 0.6rem solid $black;
+          border-top: 0.5rem solid $black;
+          border-right: 0.8rem solid transparent;
+          border-bottom: 0.5rem solid transparent;
+        }
+        &::after {
+          content: attr(data-value);
+          display: block;
+          color: $white;
+          font-family: $fontRoboto;
+          font-size: 1.2rem;
+          font-weight: 400;
+          text-align: center;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+}
