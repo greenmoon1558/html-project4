@@ -7,7 +7,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="style.bundle.css" />
+<link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+    <!-- <link rel="stylesheet" href="style.bundle.css" /> -->
     <title><%=data.title%></title>
   </head>
   <!-- <div class="test__img"></div> -->
@@ -16,5 +17,8 @@
     <%= _.template(require('./../includes/index/slider.html'))() %>
     <%= _.template(require('./../includes/images-gallery.html'))() %>
     <%= _.template(require('./../includes/footer.html'))() %>
-  </body>
+<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+<!-- <script defer src="bundle.js"></script> -->
+</body>
+
 </html>

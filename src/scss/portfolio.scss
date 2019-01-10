@@ -7,8 +7,8 @@ html {
   font-size: 62.5%;
 }
 
-@import "./fonts.css";
-@import "./vars";
+@import "./mixin/fonts.css";
+@import "./mixin/vars";
 @import "./mixin/container";
 @import "./mixin/icon";
 @import "./mixin/animate";
@@ -27,25 +27,7 @@ html {
 @import "./includes/footer";
 @import "./includes/text";
 
-@import "./includes/index/slider";
-
-@import "./includes/about/our-history";
-@import "./includes/about/our-team";
-
 @import "./includes/portfolio/portfolio";
-
-@import "./includes/portfolio_details/nav";
-@import "./includes/portfolio_details/details";
-@import "./includes/portfolio_details/portfolio-imgs";
-
-@import "./includes/blog/posts";
-
-@import "./includes/single_post/single__post-info";
-@import "./includes/single_post/single__post-contact__form";
-
-@import "./includes/contact/contact__form";
-@import "./includes/contact/map";
-@import "./includes/contact/sections";
 
 .test__img {
   background: #fff0 url(img/07_contact.psd.png) no-repeat 0px 0px;

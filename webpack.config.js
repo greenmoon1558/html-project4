@@ -1,118 +1,132 @@
 const path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const nodeExternals = require("webpack-node-externals");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WebpackMd5Hash = require("webpack-md5-hash");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const fs = require("fs");
 
-function generateHtmlPlugins(templateDir) {
-    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-    return templateFiles.map(item => {
-        const parts = item.split(".");
-        const name = parts[0];
-        const extension = parts[1];
-        return new HtmlWebpackPlugin({
-            filename: `${name}.html`,
-            template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-            inject: false
-        });
-    });
-}
+const names = fs
+  .readdirSync("./src/html/views/")
+  .filter(function(file) {
+    return file.match(/.*\.(html)$/);
+  })
+  .map(file => file.split(".")[0]);
 
-
-const htmlPlugins = generateHtmlPlugins("./src/html/views");
-
-module.exports = {
-    entry: [
-        "babel-polyfill",
-        "./src/js/index.js",
-        "./src/scss/style.scss"
-    ],
-    output: {
-        filename: "./bundle.js"
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                include: path.resolve(__dirname, "./"),
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: "env"
-                    }
-                }
-            },
-            {
-                test: /\.css$/,
-                include: [/node_modules/],
-                use: [{ loader: "css-loader" }]
-            },
-            {
-                test: /\.(sass|scss)$/,
-                include: path.resolve(__dirname, "src/scss"),
-                use: ExtractTextPlugin.extract({
-                    use: [
-                        {
-                            loader: "css-loader",
-                            options: {
-                                sourceMap: true,
-                                // minimize: true,
-                                url: false
-                            }
-                        },
-                        // {
-                        //   loader: "postcss-loader",
-                        //   options: {
-                        //     ident: "postcss",
-                        //     plugins: loader => [
-                        //       require("postcss-import")({ root: loader.resourcePath }),
-                        //       require("postcss-preset-env")(),
-                        //       require("postcss-cssnext")({
-                        //         browsers: ["> 1%", "ie 10"]
-                        //       }),
-                        //       require("cssnano")()
-                        //     ]
-                        //   }
-                        // },
-                        {
-                            loader: "sass-loader",
-                            options: {
-                                sourceMap: true
-                            }
-                        }
-                    ]
-                })
-            },
-            {
-                test: /\.html$/,
-                include: [path.resolve(__dirname, "src/html/includes")],
-                use: ["raw-loader"]
-            }
-        ]
-    },
+const baseConfig = [
+  {
+    entry: ["babel-polyfill"],
     plugins: [
-        new ExtractTextPlugin({
-            filename:  "style.bundle.css",
-            allChunks: true
+        new CleanWebpackPlugin("dist", {}),
+        new HtmlWebpackPlugin({
+            inject: false,
+            hash: true,
+            template: `./src/html/redirect/index.html`,
+            filename: `index.html`
         }),
-        new CopyWebpackPlugin([
-            {
-                from: "./src/fonts",
-                to: "./"
-            },
-            {
-                from: "./src/favicon",
-                to: "./favicon"
-            },
-            {
-                from: "./src/img",
-                to: "./img"
-            },
-            {
-                from: "./src/uploads",
-                to: "./uploads"
+      new CopyWebpackPlugin([
+        {
+          from: "./src/fonts",
+          to: "./fonts"
+        },
+        {
+          from: "./src/favicon",
+          to: "./favicon"
+        },
+        {
+          from: "./src/img",
+          to: "./img"
+        },
+        {
+          from: "./src/uploads",
+          to: "./uploads"
+        }
+      ])
+    ]
+  }
+];
+const modules = names.reduce((arr, currentName) => {
+  return [
+    ...arr,
+    {
+      entry: [`./src/js/${currentName}.js`, `./src/scss/${currentName}.scss`],
+      output: {
+        path: path.resolve(__dirname, `dist/${currentName}`),
+        filename: "[name].[chunkhash].js"
+      },
+      target: "node",
+      externals: [nodeExternals()],
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            include: path.resolve(__dirname, "./"),
+            use: {
+              loader: "babel-loader",
+              options: {
+                presets: "env"
+              }
             }
-        ])
-    ].concat(htmlPlugins)
-};
+          },
+          {
+            test: /\.(css|sass|scss)$/,
+            use: [
+              "style-loader",
+              MiniCssExtractPlugin.loader,
+              {
+                loader: "css-loader",
+                options: {
+                  sourceMap: true,
+                  minimize: true,
+                  url: false
+                }
+              },
+              {
+                loader: "postcss-loader",
+                options: {
+                  ident: "postcss",
+                  plugins: loader => [
+                    require("postcss-import")({ root: loader.resourcePath }),
+                    require("postcss-preset-env")(),
+                    require("postcss-cssnext")({
+                      browsers: ["> 1%", "ie 10"]
+                    }),
+                    require("cssnano")()
+                  ]
+                }
+              },
+              {
+                loader: "sass-loader",
+                options: {
+                  sourceMap: true
+                }
+              }
+            ]
+          },
+          {
+            test: /\.html$/,
+            include: [path.resolve(__dirname, "src/html/includes")],
+            use: ["raw-loader"]
+          }
+        ]
+      },
+      plugins: [
+        new MiniCssExtractPlugin({
+          filename: "[name].[contenthash].css"
+        }),
+        new HtmlWebpackPlugin({
+          inject: false,
+          hash: true,
+          template: `./src/html/views/${currentName}.html`,
+          filename: `${currentName}.html`
+        }),
+        new WebpackMd5Hash()
+      ]
+    }
+  ];
+}, baseConfig);
+// module.push(baseConfig);
+module.exports = modules;

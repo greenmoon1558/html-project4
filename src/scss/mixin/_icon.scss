@@ -1,15 +1,15 @@
 @mixin icon($property) {
   .icon__#{$property} {
-    background: url("img/social.svg##{$property}") top left no-repeat;
+    background: url("../img/social.svg##{$property}") top left no-repeat;
   }
 }
 @mixin icon-active($property) {
   .icon__#{$property} {
-    background: url("img/social.svg##{$property}-active") top left no-repeat;
+    background: url("../img/social.svg##{$property}-active") top left no-repeat;
   }
 }
 @mixin icon-gray($property) {
   .icon__#{$property} {
-    background: url("img/social-black.svg##{$property}") top left no-repeat;
+    background: url("../img/social-black.svg##{$property}") top left no-repeat;
   }
 }

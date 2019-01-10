@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
-    <link rel="stylesheet" href="style.bundle.css" />
+    <!-- <link rel="stylesheet" href="style.bundle.css" /> -->
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
     <title>
         <%=data.title%>
     </title>
@@ -15,7 +16,7 @@
 <body>
     <%= _.template(require('./../includes/header.html'))() %>
     <%= _.template(require('./../includes/heading.html'))({
-        img: "img/headling__img.png",
+        img: "../img/headling__img.png",
         title: "Get in Touch",
         subtitle: "Contact us Today",
         alt: "work deck with notebook",
@@ -31,6 +32,8 @@
         <%= _.template(require('./../includes/contact/three-sections.html'))() %>
     </div>
     <%= _.template(require('./../includes/footer.html'))() %>
+<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+<!-- <script defer src="bundle.js"></script> -->
 </body>
 
 </html>
