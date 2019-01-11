@@ -88,6 +88,9 @@
     width: 100%;
     position: relative;
     &__ {
+      &img{
+        width: 100%;
+      }
       &title {
         position: absolute;
         top: 50%;

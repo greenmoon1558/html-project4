@@ -1,5 +1,8 @@
 .c-contact__form {
   grid-template-columns: 1fr minmax(auto, 81rem) 1fr;
+  .contact__title{
+     @include scale();
+  }
 }
 .contact {
   &__ {

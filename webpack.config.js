@@ -19,13 +19,13 @@ const baseConfig = [
   {
     entry: ["babel-polyfill"],
     plugins: [
-        new CleanWebpackPlugin("dist", {}),
-        new HtmlWebpackPlugin({
-            inject: false,
-            hash: true,
-            template: `./src/html/redirect/index.html`,
-            filename: `index.html`
-        }),
+      new CleanWebpackPlugin("dist", {}),
+      new HtmlWebpackPlugin({
+        inject: false,
+        hash: true,
+        template: `./src/html/redirect/index.html`,
+        filename: `index.html`
+      }),
       new CopyWebpackPlugin([
         {
           from: "./src/fonts",
@@ -51,25 +51,23 @@ const modules = names.reduce((arr, currentName) => {
   return [
     ...arr,
     {
-      entry: [`./src/js/${currentName}.js`, `./src/scss/${currentName}.scss`],
+      entry: [
+        "@babel/polyfill",
+        `./src/js/${currentName}.js`,
+        `./src/scss/${currentName}.scss`
+      ],
       output: {
         path: path.resolve(__dirname, `dist/${currentName}`),
         filename: "[name].[chunkhash].js"
       },
-      target: "node",
-      externals: [nodeExternals()],
+      target: "web",
       module: {
         rules: [
           {
             test: /\.js$/,
-            exclude: /node_modules/,
             include: path.resolve(__dirname, "./"),
-            use: {
-              loader: "babel-loader",
-              options: {
-                presets: "env"
-              }
-            }
+            exclude: /node_modules/,
+            loader: "babel-loader"
           },
           {
             test: /\.(css|sass|scss)$/,
@@ -78,11 +76,7 @@ const modules = names.reduce((arr, currentName) => {
               MiniCssExtractPlugin.loader,
               {
                 loader: "css-loader",
-                options: {
-                  sourceMap: true,
-                  minimize: true,
-                  url: false
-                }
+                options: { sourceMap: true, minimize: true, url: false }
               },
               {
                 loader: "postcss-loader",
@@ -98,12 +92,7 @@ const modules = names.reduce((arr, currentName) => {
                   ]
                 }
               },
-              {
-                loader: "sass-loader",
-                options: {
-                  sourceMap: true
-                }
-              }
+              { loader: "sass-loader", options: { sourceMap: true } }
             ]
           },
           {

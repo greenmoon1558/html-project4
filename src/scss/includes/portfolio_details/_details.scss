@@ -5,6 +5,9 @@
     .text--center{
         max-width: 57.5rem;
     }
+    .heading__img{
+      height: 342px;
+    }
 }
 .c-details {
   padding: 67.5px 0 100px 0;
@@ -16,6 +19,9 @@
   }
   .details {
     &__ {
+      &text-container {
+        @include translateFromLeft();
+      }
       &img {
         &--small {
           display: grid;
@@ -144,7 +150,7 @@
           background-position: left;
           background-size: 1.6rem 1.5rem;
           width: 2rem;
-          background-image: url(img/heart.svg);
+          background-image: url(../img/heart.svg);
           height: 1.75rem;
         }
         .share__icon {
@@ -154,7 +160,7 @@
           background-size: 1rem 1.5rem;
           width: 1.5rem;
           background-color: $detailsBtnDarkGray;
-          background-image: url(img/share.svg);
+          background-image: url(../img/share.svg);
           height: 1.75rem;
         }
       }

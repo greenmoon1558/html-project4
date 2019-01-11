@@ -24,6 +24,7 @@
     }
     &title {
       &--main {
+        @include scale();
         margin: 0;
         text-align: center;
         color: $postBlack;
@@ -40,7 +41,7 @@
           background-position: left 2px;
           background-size: 1.4rem 1.7rem;
           width: 1.7rem;
-          background-image: url(img/heart-gray.svg);
+          background-image: url(../img/heart-gray.svg);
           height: 1.7rem;
         }
       }
@@ -65,6 +66,7 @@
       line-height: 3.1rem;
     }
     &comments {
+      @include scale();
       border: 0.1rem solid $galleryFilterLine;
       border-left: 0.4rem solid $singlePOstCommentGray;
       max-width: 94rem;

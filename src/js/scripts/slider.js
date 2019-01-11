@@ -1,5 +1,4 @@
-import throttle from "scripts/throttle";
-
+import throttle from "./throttle";
 class Slider {
   constructor(slider) {
     this.sliderContainer = slider.querySelector(".slider__wrapper");

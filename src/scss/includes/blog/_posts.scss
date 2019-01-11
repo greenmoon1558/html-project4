@@ -23,6 +23,7 @@
 }
 
 .post {
+  @include hideImg();
   margin-bottom: 32px;
   background-color: $white;
   &--black {
@@ -49,7 +50,7 @@
           rgba(0, 0, 0, 0.85),
           rgba(0, 0, 0, 0.85)
         ),
-        url(img/post-background-black.jpg);
+        url(../img/post-background-black.jpg);
     }
   }
   &--1,
@@ -214,29 +215,29 @@
         width: 1.3rem;
         height: 1.2rem;
         &.author__icon {
-          background-image: url(img/posts.svg#user);
+          background-image: url(../img/posts.svg#user);
         }
         &.share__icon {
-          background-image: url(img/posts.svg#share);
+          background-image: url(../img/posts.svg#share);
           background-size: 1.2rem 1.5rem;
           width: 1.3rem;
           height: 1.6rem;
         }
         &.like__icon {
-          background-image: url(img/posts.svg#like);
+          background-image: url(../img/posts.svg#like);
           background-position: right;
           background-size: 1.5rem 1.5rem;
           width: 3.5rem;
           height: 1.6rem;
         }
         &.calendar__icon {
-          background-image: url(img/posts.svg#calendar);
+          background-image: url(../img/posts.svg#calendar);
           background-size: 1.3rem 1.3rem;
           width: 1.4rem;
           height: 1.3rem;
         }
         &.search__icon {
-          background-image: url(img/posts.svg#search);
+          background-image: url(../img/posts.svg#search);
           background-position: center;
           background-size: 1.5rem 1.5rem;
           width: 3.5rem;

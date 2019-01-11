@@ -37,6 +37,16 @@
     transition: transform 2s ease, opacity 2s ease;
   }
 }
+@mixin translateFromLeft() {
+  transform: translateX(-15rem);
+  opacity: 0;
+  will-change: opacity, transform;
+  &.js-animate {
+    opacity: 1;
+    transform: translateX(0rem);
+    transition: transform 2s ease, opacity 2s ease;
+  }
+}
 @mixin rotateY() {
   transform: rotateY(0);
   will-change: transform;
@@ -55,10 +65,33 @@
   }
 }
 @mixin visible(){
-   opacity: 0;
+  opacity: 0;
   will-change: opacity;
   &.js-animate {
     opacity: 1;
     transition:opacity 2s ease 2s;
   }
 }
+@mixin visibleColor(){
+  color: transparent;
+  will-change: color;
+  &.js-animate {
+      color: $headerGray;
+    transition:color 2s ease 2s;
+  }
+}
+
+@mixin hideImg(){
+  will-change: transform;
+  &.js-animate {
+     animation: hideImg 1s linear alternate-reverse forwards;
+  }
+@keyframes hideImg {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+  }

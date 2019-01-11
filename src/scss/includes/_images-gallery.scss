@@ -46,20 +46,11 @@
         text-align: center;
       }
       &img {
-        animation: hideImg 1s linear alternate-reverse forwards;
+         @include hideImg();
         padding: 0 0 3rem 0;
         width: 100%;
         height: auto;
       }
     }
-  }
-}
-
-@keyframes hideImg {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
   }
 }

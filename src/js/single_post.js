@@ -1,1 +1,4 @@
-console.log("single_post");
+import scroll from "./scripts/scroll";
+document.addEventListener("DOMContentLoaded", () => {
+  scroll();
+});

@@ -27,6 +27,15 @@ html {
 
 @import "./includes/blog/posts";
 
+.test__img {
+  background: #fff0 url(../../Lian/05_blog.psd.png) no-repeat 0px 0px;
+  opacity: 0.5;
+  width: 1600px;
+  top: 0px;
+  z-index: 1;
+  position: absolute;
+  height: 2600px;
+}
 
 * {
   box-sizing: border-box;

@@ -1,16 +1,18 @@
 @mixin load-more() {
-.load-more {
-  color: $white;
-  font-family: $fontRoboto;
-  font-size: 1.3rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  width: 12.5rem;
-  height: 3rem;
-  background-color: $galleryGray;
-  margin: 0.5rem auto 7rem;
-  display: block;
-  letter-spacing: 0.076rem;
-}
+  .load-more {
+    color: $white;
+    font-family: $fontRoboto;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    width: 12.5rem;
+    height: 3rem;
+    background-color: $galleryGray;
+    margin: -9.3rem auto 7rem;
+    position: relative;
+    z-index: 4;
+    display: block;
+    letter-spacing: 0.076rem;
+  }
 }

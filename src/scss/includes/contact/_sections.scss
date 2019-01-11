@@ -6,8 +6,11 @@
     margin: 2rem 0 3rem;
   }
 }
-.c-contact__columns{
-    .tree-columns{
-        padding: 0 0 4.2rem;
-    }
+.c-contact__columns {
+  .section__card {
+    @include rotateY();
+  }
+  .tree-columns {
+    padding: 0 0 4.2rem;
+  }
 }
