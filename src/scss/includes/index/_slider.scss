@@ -90,6 +90,8 @@
     &__ {
       &img{
         width: 100%;
+        min-height: 415px;
+        object-fit: cover;
       }
       &title {
         position: absolute;

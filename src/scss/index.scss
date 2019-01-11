@@ -6,8 +6,6 @@ $font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu
 html {
   font-size: 62.5%;
 }
-
-@import "./mixin/fonts.css";
 @import "./mixin/vars";
 @import "./mixin/container";
 @import "./mixin/icon";
@@ -22,6 +20,7 @@ html {
 @include load-more();
 
 @import "./includes/header";
+@import "./includes/header--1024";
 @import "./includes/images-gallery";
 @import "./includes/footer";
 

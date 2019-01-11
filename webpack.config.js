@@ -17,8 +17,40 @@ const names = fs
 
 const baseConfig = [
   {
-    entry: ["babel-polyfill"],
+    entry: ["babel-polyfill", "./src/scss/mixin/fonts.css"],
+    module: {
+      rules: [
+        {
+          test: /\.(css)$/,
+          use: [
+            "style-loader",
+            MiniCssExtractPlugin.loader,
+            {
+              loader: "css-loader",
+              options: { sourceMap: true, minimize: true, url: false }
+            },
+            {
+              loader: "postcss-loader",
+              options: {
+                ident: "postcss",
+                plugins: loader => [
+                  require("postcss-import")({ root: loader.resourcePath }),
+                  require("postcss-preset-env")(),
+                  require("postcss-cssnext")({
+                    browsers: ["> 1%", "ie 10"]
+                  }),
+                  require("cssnano")()
+                ]
+              }
+            },
+          ]
+        }
+      ]
+    },
     plugins: [
+      new MiniCssExtractPlugin({
+        filename: "fonts.css"
+      }),
       new CleanWebpackPlugin("dist", {}),
       new HtmlWebpackPlugin({
         inject: false,
