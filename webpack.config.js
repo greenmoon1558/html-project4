@@ -1,7 +1,7 @@
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const nodeExternals = require("webpack-node-externals");
+const ResourceHintWebpackPlugin = require("resource-hints-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
@@ -29,20 +29,7 @@ const baseConfig = [
               loader: "css-loader",
               options: { sourceMap: true, minimize: true, url: false }
             },
-            {
-              loader: "postcss-loader",
-              options: {
-                ident: "postcss",
-                plugins: loader => [
-                  require("postcss-import")({ root: loader.resourcePath }),
-                  require("postcss-preset-env")(),
-                  require("postcss-cssnext")({
-                    browsers: ["> 1%", "ie 10"]
-                  }),
-                  require("cssnano")()
-                ]
-              }
-            },
+       
           ]
         }
       ]
@@ -139,11 +126,14 @@ const modules = names.reduce((arr, currentName) => {
           filename: "[name].[contenthash].css"
         }),
         new HtmlWebpackPlugin({
+       
+          preload: ['**/*.css'],
           inject: false,
           hash: true,
           template: `./src/html/views/${currentName}.html`,
           filename: `${currentName}.html`
         }),
+        new ResourceHintWebpackPlugin(),
         new WebpackMd5Hash()
       ]
     }
