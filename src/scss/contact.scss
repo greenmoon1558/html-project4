@@ -18,8 +18,9 @@ html {
 @include container-big();
 @include tree-columns();
 
-
+@import "./mixin/title--1024";
 @import "./includes/header";
+@import "./includes/header--1024";
 @import "./includes/heading";
 @import "./includes/footer";
 @import "./includes/text";
@@ -27,9 +28,12 @@ html {
 @import "./includes/single_post/single__post-contact__form";
 
 @import "./includes/contact/contact__form";
+@import "./includes/contact/contact__form--560";
+@import "./includes/contact/contact__form--1024";
 @import "./includes/contact/map";
 @import "./includes/contact/sections";
-
+@import "./includes/contact/sections--432";
+@import "./includes/contact/sections--1024";
 .test__img {
   background: #fff0 url(../../Lian/07_contact.psd.png) no-repeat 0px 0px;
   opacity: 0.5;

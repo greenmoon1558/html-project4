@@ -20,9 +20,13 @@ html {
 @include tree-columns();
 @include load-more();
 
+@import "./mixin/title--1024";
 @import "./includes/header";
+@import "./includes/header--1024";
 @import "./includes/heading";
 @import "./includes/images-gallery";
+@import "./includes/images-gallery--432";
+@import "./includes/images-gallery--1024";
 @import "./includes/footer";
 @import "./includes/text";
 

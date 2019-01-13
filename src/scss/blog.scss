@@ -20,11 +20,14 @@ html {
 @include tree-columns();
 @include load-more();
 
+@import "./mixin/title--1024";
 @import "./includes/header";
+@import "./includes/header--1024";
 @import "./includes/heading";
 @import "./includes/footer";
 
 @import "./includes/blog/posts";
+@import "./includes/blog/posts--1024";
 
 .test__img {
   background: #fff0 url(../../Lian/05_blog.psd.png) no-repeat 0px 0px;

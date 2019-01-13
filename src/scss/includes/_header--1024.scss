@@ -1,3 +1,32 @@
 @media (min-width: 64rem) {
-    
+  .c-menu {
+    &__burger.menu__link{
+        display: none;
+    }
+    &__checkbox {
+      &:checked ~ .menu-items,
+      &:not(:checked) ~ .menu-items {
+          visibility: visible;
+          transform: translateY(0);
+          transition: none;
+      }
+    }
+    .menu {
+      &-items {
+        position: static;
+        flex-direction: row;
+      }
+      &__link,
+      &__link:link {
+        width: auto;
+      }
+      &__line {
+        width: 2rem;
+        height: 0.1rem;
+        background-color: $black;
+        display: block;
+        @include scaleToLeft();
+      }
+    }
+  }
 }

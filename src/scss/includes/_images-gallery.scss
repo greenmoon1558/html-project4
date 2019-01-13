@@ -1,5 +1,6 @@
 .images-gallery {
   background-color: $galleryWhite;
+  padding: 0;
   .gallery {
     &__ {
       &filter {
@@ -7,12 +8,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         border: 0.1rem solid $galleryFilterLine;
         border-left: 0px;
         border-right: 0px;
         margin: 30px 0;
         padding: 0;
         .filter__item {
+          min-width: 100vw;
+          text-align: center;
           color: $headerGray;
           font-family: $fontRoboto;
           font-size: 1.4rem;
@@ -20,12 +24,11 @@
           text-transform: uppercase;
           letter-spacing: 0.105rem;
           position: relative;
-          padding: 23px 2.7rem 21px 1.8rem;
+          padding: 2.1rem 1rem;
           &--active {
             color: $black;
           }
           &:not(:last-child)::after {
-            content: "";
             height: 3rem;
             background-color: $galleryFilterDivider;
             width: 0.1rem;
@@ -37,7 +40,6 @@
         }
       }
       &images {
-        margin-right: 0.5rem;
         .js-hide {
           display: none;
         }
@@ -46,7 +48,7 @@
         text-align: center;
       }
       &img {
-         @include hideImg();
+        @include hideImg();
         padding: 0 0 3rem 0;
         width: 100%;
         height: auto;

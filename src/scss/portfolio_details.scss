@@ -18,13 +18,18 @@ html {
 @include container-big();
 @include tree-columns();
 
+@import "./mixin/title--1024";
 @import "./includes/header";
+@import "./includes/header--1024";
 @import "./includes/heading";
 @import "./includes/footer";
 @import "./includes/text";
 
 @import "./includes/portfolio_details/nav";
+@import "./includes/portfolio_details/nav--768";
 @import "./includes/portfolio_details/details";
+@import "./includes/portfolio_details/details--560";
+@import "./includes/portfolio_details/details--1024";
 @import "./includes/portfolio_details/portfolio-imgs";
 
 .test__img {

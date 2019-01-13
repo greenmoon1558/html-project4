@@ -1,4 +1,7 @@
 .header {
+  padding: 0 2rem;
+  position: relative;
+  box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.15);
   .container--big {
     grid-template-rows: 9.2rem;
   }
@@ -12,22 +15,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &__burger[for=burgger].menu__link {
+    width: auto;
+  }
+  &__checkbox {
+    display: none;
+    &:checked ~ .menu-items {
+      visibility: visible;
+      transform: translateY(0);
+      transition: visibility 1s, transform 1s ease-in-out 0s;
+    }
+    &:not(:checked) ~ .menu-items {
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: visibility 1s, transform 1s ease-in-out 0s;
+    }
+  }
   .menu {
     &__line {
-      width: 2rem;
-      height: 0.1rem;
-      background-color: $black;
-      @include scaleToLeft();
+      display: none;
     }
     &-items {
       display: flex;
+      top: 80px;
+      background-color: $white;
+      z-index: 10;
+      left: 0;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      position: absolute;
+      justify-content: flex-start;
+      will-change: visibility, transform, opacity;
     }
     &__link:first-child {
       padding: 3.4rem 2.1rem 2.9rem 1.7rem;
     }
-    &__link {
+    &__link,
+    &__link:link {
+      display: block;
+      width: 100vw;
+      text-align: center;
       text-decoration: none;
       color: $headerGray;
       font-family: $fontRoboto;
@@ -35,10 +62,9 @@
       font-weight: 700;
       text-transform: uppercase;
       padding: 3.4rem 2.3rem 2.9rem 2.2rem;
-      &:focus,
       &:hover,
       &:active,
-      &:visited {
+      &.active {
         color: $black;
       }
     }

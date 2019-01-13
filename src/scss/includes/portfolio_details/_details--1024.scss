@@ -1,0 +1,10 @@
+@media (min-width: 64rem) {
+  .c-details {
+    .details__img--big-container {
+      text-align: center;
+    }
+    .container--inner {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

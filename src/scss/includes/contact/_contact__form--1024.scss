@@ -1,0 +1,21 @@
+@media (min-width: 64rem) {
+  .c-contact-form {
+    .contact {
+      &__ {
+        &form {
+          grid-template-columns: 33rem 1fr;
+          text-align: left;
+        }
+        &title {
+          text-align: left;
+          &--min:after{
+            margin: 0;
+          }
+        }
+        &btn{
+            margin: 7px 0 82px;
+        }
+      }
+    }
+  }
+}

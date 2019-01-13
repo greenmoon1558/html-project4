@@ -1,0 +1,15 @@
+@media (min-width: 64rem) {
+  .info {
+    .text__title {
+      max-width: 81rem;
+    }
+    &__ {
+      &text {
+        max-width: 81rem;
+      }
+      &comments {
+        max-width: 94rem;
+      }
+    }
+  }
+}

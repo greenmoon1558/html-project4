@@ -3,7 +3,7 @@
     .gallery {
       &__ {
         &btn {
-          margin: -10rem auto 15.3rem;
+          margin: 0.5rem auto 15.3rem;
         }
         &img {
           padding: 0 0 3.2rem 0px;
@@ -12,6 +12,20 @@
           margin: 70px 0 30px;
           .filter__item {
             padding: 23px 2.7rem 20px 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  .c-portfolio {
+    .images-gallery {
+      .gallery {
+        &__ {
+          &btn {
+            margin: -10rem auto 15.3rem;
           }
         }
       }

@@ -1,11 +1,19 @@
+.c-about {
+  background-color: $galleryWhite;
+}
 .c-history {
   min-width: 600px;
-  padding: 69px 0 0;
-  background-color: $galleryWhite;
+  padding-top: 69px;
   .history {
     &__ {
+      &info-block, &skills-block{
+        text-align: left;
+        padding-top: 3rem;
+      }
       &block {
-        max-width: 55.5rem;
+        text-align: center;
+        flex: 1 0 47.5rem;
+        max-width: calc(100vw - 4rem);
       }
       &title {
         padding: 0.5rem 0;
@@ -14,15 +22,21 @@
       &text {
         margin: 25px 0px 27.5px 0px;
       }
-      &img{
+      &img {
+        max-width: 100%;
         @include rotateY();
       }
       &progress-bars {
         margin: 31px 0 0 0;
       }
       &wrapper {
+        display: grid;
+        flex-wrap: wrap;
+        justify-content: space-between;
         column-gap: 2.5rem;
-        column-count: 2;
+        column-count: 1;
+        grid-column-gap: 2.5rem;
+        grid-template-columns: auto;
         padding-bottom: 38px;
         border-bottom: 1px solid $footerWhite;
       }

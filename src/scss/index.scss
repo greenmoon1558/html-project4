@@ -19,12 +19,16 @@ html {
 @include tree-columns();
 @include load-more();
 
+@import "./mixin/title--1024";
 @import "./includes/header";
 @import "./includes/header--1024";
 @import "./includes/images-gallery";
+@import "./includes/images-gallery--432";
+@import "./includes/images-gallery--1024";
 @import "./includes/footer";
 
 @import "./includes/index/slider";
+@import "./includes/index/slider--1024";
 
 
 .test__img {

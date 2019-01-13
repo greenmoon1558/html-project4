@@ -12,6 +12,7 @@
           margin: 0 0 5.75rem 0;
           padding: 0;
           &:after {
+            margin: 0 auto;
             content: "";
             display: block;
             height: 0.1rem;
@@ -21,7 +22,7 @@
             background-color: $black;
           }
         }
-        text-align: left;
+        text-align: center;
         margin: -0.4rem 0 0.8rem;
         font-size: 3.3rem;
         letter-spacing: 1.04rem;
@@ -45,18 +46,20 @@
           margin: 0.7rem 0;
       }
       &btn {
-        margin: 7px 0 82px;
+        margin: 7px auto 82px;
         padding: 0.9rem 5.2rem;
       }
       &form {
         padding: 8rem 0 0 0;
         display: grid;
-        grid-template-columns: 33rem 1fr;
+        grid-template-columns: 1fr;
         grid-gap: 6.25rem;
+        text-align: center;
       }
       &two-colunms {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        grid-row-gap: 3rem;
         grid-column-gap: 3rem;
       }
       &textarea {

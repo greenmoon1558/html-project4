@@ -11,14 +11,16 @@
     }
   }
   &__ {
+    &text {
+      display: none;
+    }
     &btns {
       display: flex;
     }
     &btn {
       padding: 0;
-      width: 16.5rem;
+      width: 6.5rem;
       border: none;
-      border-right: 0.1rem solid $footerWhite;
       background-color: $white;
       color: $navBlack;
       font-family: $fontRoboto;
@@ -33,17 +35,10 @@
       margin: 0;
       &.btn {
         &-- {
-          &prev {
-            border-left: 0.1rem solid $footerWhite;
-          }
           &next {
             .icon {
               background-position-x: 0.7rem;
             }
-          }
-          &all {
-            border-left: 0.1rem solid $footerWhite;
-            width: 19.4rem;
           }
         }
       }
@@ -66,7 +61,7 @@
         display: inline-block;
         background-repeat: no-repeat;
         background-position: left;
-        background-position-x: -5px;
+        background-position-x: -4px;
         background-position-y: 3px;
         background-size: 1.5rem;
         width: 1.75rem;

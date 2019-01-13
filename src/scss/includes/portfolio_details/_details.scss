@@ -1,36 +1,47 @@
-.c-portfolio-details{
-    .title--center{
-        margin-left: 0;
-    }
-    .text--center{
-        max-width: 57.5rem;
-    }
-    .heading__img{
-      height: 342px;
-    }
+.c-portfolio-details {
+  .title--center {
+    margin-left: 0;
+  }
+  .text--center {
+    max-width: 57.5rem;
+  }
+  .heading__img {
+    height: 342px;
+  }
 }
 .c-details {
-  padding: 67.5px 0 100px 0;
+  padding-top: 67.5px;
   background-color: $galleryWhite;
   .container--inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 3.5rem;
   }
   .details {
     &__ {
+      &block {
+        padding-bottom: 100px;
+        max-width: calc(100vw - 4rem);
+      }
       &text-container {
         @include translateFromLeft();
       }
       &img {
+        width: calc(50vw - 3rem);
         &--small {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(2, auto);
+          grid-row-gap: 1rem;
           grid-column-gap: 1rem;
+          justify-content: center;
         }
-        &--big-container {
+        &--big{
+          max-width: calc(100vw - 4rem);
+          &-container {
           margin: 0 0 1rem 0;
+          text-align: center;
         }
+      }
       }
       &btns {
         display: flex;
@@ -76,7 +87,7 @@
         @include icon-gray("instagram");
         .social {
           &__link {
-            padding: 12px 12.75px;
+            padding: 6px 6.75px;
             text-decoration: none;
             &:focus,
             &:hover,
@@ -111,7 +122,7 @@
         }
       }
       &img-container {
-        padding: 5px 0 0 0;
+        padding-top: 5px;
       }
       &block {
       }

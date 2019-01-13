@@ -1,6 +1,16 @@
 @mixin tree-columns() {
   .tree-columns {
-    column-count: 3;
+    column-count: 1;
     column-gap: 3rem;
+  }
+  @media (min-width: 27rem) {
+    .tree-columns {
+      column-count: 2;
+    }
+  }
+  @media (min-width: 64rem) {
+    .tree-columns {
+      column-count: 3;
+    }
   }
 }

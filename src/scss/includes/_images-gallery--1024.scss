@@ -1,0 +1,10 @@
+@media (min-width: 64rem) {
+  .images-gallery .gallery__filter .filter__item {
+    min-width: 0;
+    text-align: left;
+    padding: 23px 2.7rem 21px 1.8rem;
+    &:not(:last-child):after {
+      content: "";
+    }
+  }
+}

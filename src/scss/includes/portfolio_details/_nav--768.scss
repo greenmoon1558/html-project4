@@ -1,0 +1,24 @@
+@media (min-width: 48rem) {
+  .c-nav {
+    &__ {
+      &btn {
+        width: 16.5rem;
+        border-right: 0.1rem solid $footerWhite;
+        &.btn {
+          &-- {
+            &prev {
+              border-left: 0.1rem solid $footerWhite;
+            }
+            &all {
+              border-left: 0.1rem solid $footerWhite;
+                width: 19.4rem;
+            }
+          }
+        }
+      }
+      &text {
+        display: inline;
+      }
+    }
+  }
+}

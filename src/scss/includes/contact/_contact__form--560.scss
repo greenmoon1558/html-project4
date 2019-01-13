@@ -1,0 +1,5 @@
+@media (min-width: 35rem) {
+  .c-contact-form .contact__two-colunms{
+      grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,11 @@
+@media (min-width: 27rem) {
+  .info {
+    &__ {
+      &titles {
+        &--small {
+          display: block;
+        }
+      }
+    }
+  }
+}

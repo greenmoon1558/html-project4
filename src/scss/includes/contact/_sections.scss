@@ -7,8 +7,16 @@
   }
 }
 .c-contact__columns {
-  .section__card {
-    @include rotateY();
+  .section {
+    &__ {
+      &img{
+        width: 100%;
+      }
+      &card {
+        min-height: 43rem;
+        @include rotateY();
+      }
+    }
   }
   .tree-columns {
     padding: 0 0 4.2rem;

@@ -1,18 +1,23 @@
 .c-posts {
   background-color: $galleryWhite;
   .container--inner {
-    margin: 68px 0 0 0;
+    margin: 78px 0 0 0;
   }
 }
 .posts {
   &__ {
-    &load-more{
+    &load-more {
       margin: 3.5rem auto 10rem;
     }
+    &row:nth-child(2n){
+      margin: 0;
+      width: 100%;
+    }
     &three-columns {
-        display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 3rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
     &list {
       padding: 1.5rem 2.2rem 0.5rem 2.2rem;
@@ -23,6 +28,7 @@
 }
 
 .post {
+  max-width: calc(100vw - 4rem);
   @include hideImg();
   margin-bottom: 32px;
   background-color: $white;
@@ -63,11 +69,11 @@
   &--8 {
     margin-bottom: 25px;
   }
-  &--9{
+  &--9 {
     margin-bottom: 40px;
   }
-  &--10{
-    .post__header--gray{
+  &--10 {
+    .post__header--gray {
       margin: 0 0 35px 0;
     }
   }
@@ -75,10 +81,11 @@
     padding: 0.8rem 0 0 0;
   }
   &__ {
-    &instagram{
+    &instagram {
       padding: 0 2.5rem 2.5rem 2.5rem;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, auto);
+      justify-content: space-around;
       grid-template-rows: repeat(3, 1fr);
       grid-gap: 0.5rem;
     }
@@ -89,7 +96,7 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: flex-start;
     }
     &tag-item {
@@ -104,7 +111,7 @@
       border-radius: 0.2rem;
       border: 0.1rem solid $tagBorderGray;
       &:hover,
-      &:focus{
+      &:focus {
         background-color: $black;
         color: $white;
       }
@@ -152,7 +159,11 @@
       }
     }
     &img {
+      padding-top: 2rem;
+      display: block;
+      margin: 0 auto;
       width: 100%;
+      max-width: 36.5rem;
       height: auto;
     }
     &footer {

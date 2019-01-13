@@ -1,0 +1,19 @@
+@media (min-width: 64rem) {
+  .c-history {
+    .history {
+      &__ {
+          &info-block, &skills-block{
+        padding-top: 0;
+      }
+        &wrapper {
+          column-count: 2;
+          grid-template-columns: repeat(2, 1fr);
+        }
+        &block{
+            text-align: left;
+             max-width: 55.5rem;
+        }
+      }
+    }
+  }
+}

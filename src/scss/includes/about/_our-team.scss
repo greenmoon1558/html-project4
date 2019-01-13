@@ -2,14 +2,19 @@
   background-color: $galleryWhite;
   .team {
     &-members {
-      margin-bottom: 7.25rem;
+      display: grid;
+      grid-template-columns: minmax(auto, 36.5rem);
+      justify-content: center;
+      margin-bottom: 5rem;
       &__ {
         &card {
-            @include rotateY();
+          margin-bottom: 2rem;
+          @include rotateY();
         }
         &img-container {
         }
         &img {
+          width: 100%;
         }
         &info {
           background-color: $white;

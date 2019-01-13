@@ -1,13 +1,15 @@
-.c-portfolio-details .text--center{
-    margin-bottom: 47px;
+.c-portfolio-details .text--center {
+  margin-bottom: 47px;
 }
 
 .c-portfolio-imgs__wrapper {
   .container--inner {
-    margin-bottom: 6.5rem;
+    margin-bottom: 3rem;
   }
-  .portfolio__img{
-      @include rotateY();
-      display: block;
+  .portfolio__img {
+    margin-bottom: 3rem;
+    @include rotateY();
+    display: block;
+    width: 100%;
   }
 }

@@ -9,10 +9,15 @@
     width: 12.5rem;
     height: 3rem;
     background-color: $galleryGray;
-    margin: -9.3rem auto 7rem;
+    margin: 0.5rem auto 7rem;
     position: relative;
     z-index: 4;
     display: block;
     letter-spacing: 0.076rem;
+  }
+  @media (min-width: 64rem) {
+    .load-more {
+      margin: -9.3rem auto 7rem;
+    }
   }
 }

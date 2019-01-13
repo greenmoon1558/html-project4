@@ -18,12 +18,17 @@ html {
 @include container-big();
 @include tree-columns();
 
+@import "./mixin/title--1024";
 @import "./includes/header";
+@import "./includes/header--1024";
 @import "./includes/heading";
 @import "./includes/footer";
 
 @import "./includes/single_post/single__post-info";
+@import "./includes/single_post/single__post-info--432";
+@import "./includes/single_post/single__post-info--1024";
 @import "./includes/single_post/single__post-contact__form";
+@import "./includes/single_post/single__post-contact__form--768";
 
 .test__img {
   background: #fff0 url(../../Lian/06_single_post.psd.png) no-repeat 0px 0px;

@@ -18,14 +18,17 @@ html {
 @include container-big();
 @include tree-columns();
 
+@import "./mixin/title--1024";
 @import "./includes/header";
+@import "./includes/header--1024";
 @import "./includes/heading";
-@import "./includes/images-gallery";
 @import "./includes/footer";
 @import "./includes/text";
 
 @import "./includes/about/our-history";
+@import "./includes/about/our-history--1024";
 @import "./includes/about/our-team";
+@import "./includes/about/our-team--768";
 
 .test__img {
   background: #fff0 url(../../Lian/02_about.psd.png) no-repeat 0px 0px;

@@ -1,13 +1,14 @@
-<% var data = { title: "Single post", author: "Natalia Zhydejkina" }; %>
 <!DOCTYPE html>
 <html lang="en">
-
+<% var data = { title: "Single post", author: "Natalia Zhydejkina" }; %>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
     <link rel="preload" href="../fonts.css" as="style" />
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
-    
+    <link rel="stylesheet" type="text/css" href="min-width-27-rem.css" media="(min-width: 27rem)" />
+    <link rel="stylesheet" type="text/css" href="min-width-48-rem.css" media="(min-width: 48rem)" />
+    <link rel="stylesheet" type="text/css" href="min-width-64-rem.css" media="(min-width: 64rem)" />
     <title>
         <%=data.title%>
     </title>

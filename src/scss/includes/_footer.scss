@@ -10,7 +10,7 @@
             text-align: center;
           }
           &small {
-            height: 63px;
+          
             border: 0.1rem solid $footerWhite;
           }
           &middle {
@@ -39,6 +39,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     @include icon("facebook");
     @include icon("google-plus");
     @include icon("twitter");
@@ -48,7 +49,7 @@
     @include icon("instagram");
   }
   &__link {
-    padding: 24px 26px;
+    padding: 2.4rem 2.6rem 2.2rem;
     text-decoration: none;
     &:focus,
     &:hover,

@@ -1,0 +1,23 @@
+@media (min-width: 64rem) {
+  .c-posts {
+    .posts {
+      &__ {
+        &row {
+          flex: 1 1 calc(33% - 5rem);
+          &:nth-child(2n) {
+            margin: 0 3rem;
+          }
+        }
+        &tags {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    .post {
+      &__img {
+        padding-top: 0;
+      }
+    }
+  }
+}
