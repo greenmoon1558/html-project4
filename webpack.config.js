@@ -54,7 +54,7 @@ let getConfig = (env) => {
           },
           {
             from: "./src/favicon",
-            to: "./favicon"
+            to: "./"
           },
           {
             from: "./src/img",
