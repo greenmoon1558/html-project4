@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <% var data = { title: "Portfolio details", author: "Natalia Zhydejkina" }; %>
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
-    <link rel="preload" href="../fonts.css" as="style" />
-    <link rel="preload" type="text/css" as="style" href="main.css" />
+<link rel="prefetch" href="../fonts.css" as="style" />
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
     <link rel="stylesheet" type="text/css" href="min-width-27-rem.css" media="(min-width: 27rem)" />
     <link rel="stylesheet" type="text/css" href="min-width-35-rem.css" media="(min-width: 35rem)" />
     <link rel="stylesheet" type="text/css" href="min-width-48-rem.css" media="(min-width: 48rem)" />
@@ -16,27 +15,26 @@
     </title>
 </head>
 <!-- <div class="test__img"></div> -->
-
 <body>
     <%= _.template(require('./../includes/header.html'))() %>
     <div class="c-portfolio-details">
-        <%= _.template(require('./../includes/heading.html'))({
+    <%= _.template(require('./../includes/heading.html'))({
                 img: "../img/headling__img2.jpg",
                 title: "LATEST PROJECTS",
                 subtitle: "We Deliver Quality",
                 alt: "cosmetic",
                 heading: "<section class='c-heading darker'>"
             }) %>
-        <%= _.template(require('./../includes/portfolio_details/nav.html'))() %>
-        <%= _.template(require('./../includes/portfolio_details/details.html'))() %>
-        <%= _.template(require('./../includes/text.html'))({
+    <%= _.template(require('./../includes/portfolio_details/nav.html'))() %>
+    <%= _.template(require('./../includes/portfolio_details/details.html'))() %>
+    <%= _.template(require('./../includes/text.html'))({
                 title: "Related Works",
                 text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
     }) %>
-        <%= _.template(require('./../includes/portfolio_details/portfolio-imgs.html'))() %>
+    <%= _.template(require('./../includes/portfolio_details/portfolio-imgs.html'))() %>
     </div>
     <%= _.template(require('./../includes/footer.html'))() %>
-    <script defer src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+<script defer src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 
 </html>

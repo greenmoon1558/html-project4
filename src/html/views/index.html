@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<% var data = { title: "Home", author: "Natalia Zhydejkina" }; %>
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" />
-  <link rel="preload" type="text/css" href="../fonts.css" as="style" />
-  <link rel="preload" type="text/css" as="style" href="main.css" />
-  <link rel="stylesheet" href="min-width-27-rem.css" media="(min-width: 27rem)" />
-  <link rel="stylesheet" href="min-width-64-rem.css" media="(min-width: 64rem)" />
-  <title>
-    <%=data.title%>
-  </title>
-</head>
-<!-- <div class="test__img"></div> -->
-
-<body>
-  <%= _.template(require('./../includes/header.html'))() %>
-  <%=
-    _.template(require('./../includes/index/slider.html'))() %>
-  <%=
-    _.template(require('./../includes/images-gallery.html'))() %>
-  <%=
+  <% var data = { title: "Home", author: "Natalia Zhydejkina" }; %>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+    />
+<link rel="prefetch" type="text/css" href="../fonts.css" as="style" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
+    />
+    <link
+      rel="stylesheet"
+      href="min-width-27-rem.css"
+      media="(min-width: 27rem)"
+    />
+    <link
+      rel="stylesheet"
+      href="min-width-64-rem.css"
+      media="(min-width: 64rem)"
+    />
+    <title><%=data.title%></title>
+  </head>
+  <!-- <div class="test__img"></div> -->
+  <body>
+    <%= _.template(require('./../includes/header.html'))() %> <%=
+    _.template(require('./../includes/index/slider.html'))() %> <%=
+    _.template(require('./../includes/images-gallery.html'))() %> <%=
     _.template(require('./../includes/footer.html'))() %>
-  <script defer src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
-</body>
-
+    <script
+      defer
+      src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"
+    ></script>
+  </body>
 </html>
