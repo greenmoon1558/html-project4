@@ -134,7 +134,7 @@ let getConfig = (env) => {
         },
         plugins: [
           new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css"
+            filename: "[name].css"
           }),
           new HtmlWebpackPlugin({
             inject: false,
